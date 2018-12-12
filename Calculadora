@@ -1,0 +1,38 @@
+respuesta_usuario = ""
+while(respuesta_usuario != "no"):
+
+    print("Bienvenido a la calculara en Python")
+    print("Estas son las operaciones que puede realizar"+'\n'+ "1 - Suma"+'\n'+ "2 - Resta"+'\n'+"3 - Multiplicacion"+'\n'+ "4 - División")
+
+    try:
+        operacion = int(input("Introducue el número de la operación que desea realizar "))
+        print()
+        if operacion < 1 or operacion > 4:
+            print("Ese no es un número valido")
+            continue
+        numero_1 = int(input("Introduce el primer número "))
+        numero_2 = int(input("Introduce el segundo número "))
+    except ValueError:
+        print("Ese no es un número")
+
+    else:
+        if operacion == 1:
+            print("El resultado es " + str(numero_1 + numero_2))
+        if operacion == 2:
+            print("El resultado es " + str(numero_1 - numero_2))
+        if operacion == 3:
+            print("El resultado es " + str(numero_1 * numero_2))
+        if operacion == 4:
+            print("El resultado es " + str(numero_1 / numero_2))
+
+    try:
+        print()
+        respuesta_usuario = input("Deseas continuar? ")
+        print()
+        print()
+    except ValueError:
+        print("Eso no es un string")
+    else:
+        if(respuesta_usuario != "si"):
+            break
+print("Gracias por usar la calculadora")
