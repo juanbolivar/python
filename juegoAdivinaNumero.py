@@ -16,7 +16,12 @@ def jugar():
     intentos = 0
 
     print("Bienvenido a Adivina el Numero")
-    dificultad = int(input("Introduca número para elegir dificultad: \n 1-Fácil \n 2-Medio \n 3-Difícil"))
+    while True:
+        try:
+            dificultad = int(input("Introduca número para elegir dificultad: \n 1-Fácil \n 2-Medio \n 3-Difícil"))
+            break
+        except ValueError:
+            print("No ha introducido un número, introduce un número")
     if dificultad == 1:
         numero_aleatorio = random.randint(1, 10)
     else:
@@ -43,6 +48,8 @@ def jugar():
                 jugar_nuevamente = input("Quieres juagar de nuevo? si/no: ")
                 if jugar_nuevamente.lower() == "si":
                     jugar()
+                else:
+                    print("Fin del juego.")
                 break
 
             elif adivinanza > numero_aleatorio:
@@ -59,5 +66,7 @@ def jugar():
         jugar_nuevamente= input("Quieres juagar de nuevo? si/no: ")
         if jugar_nuevamente.lower() == "si":
             jugar()
+        else:
+            print("Fin del juego.")
 
 jugar()
