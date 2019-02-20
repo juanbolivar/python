@@ -9,15 +9,17 @@
 # Debemos hacer función de diferencia
 # Debemos hacer función de diferencia simétrica
 
-#con la función set, casteamos el valor del input en set
-#utilizamos la función split para que separe nuestra cadena,
+# con la función set, casteamos el valor del input en set
+# utilizamos la función split para que separe nuestra cadena,
 # como no le indicamos nada, coge el espacio como delimitador
 
 # print(conjunto_a)
 # print(conjunto_b)
 mensaje_inicio = "Bienvenido a los Conjuntos"
 mensaje_actualizacion = "Actualización de conjuntos"
-def union_conjuntos(conjunto_a,conjunto_b):
+
+
+def union_conjuntos(conjunto_a, conjunto_b):
     # conjunto_a | conjunto_b
 
     print("\nLa union de A y B es {}\n".format(conjunto_a.union(conjunto_b)))
@@ -25,12 +27,11 @@ def union_conjuntos(conjunto_a,conjunto_b):
     # conjunto_a.union(conjunto_b)
 
 
-def interseccion_conjuntos(conjunto_a,conjunto_b):
-
+def interseccion_conjuntos(conjunto_a, conjunto_b):
     print("\nLa interseccion de A y B es {}\n".format(conjunto_a.intersection(conjunto_b)))
 
 
-def diferencia_conjuntos(conjunto_a,conjunto_b):
+def diferencia_conjuntos(conjunto_a, conjunto_b):
     print("Elije la diferencia que quieres realizar:")
     print("1. A - B")
     print("2. B - A")
@@ -38,7 +39,7 @@ def diferencia_conjuntos(conjunto_a,conjunto_b):
         operacion = int(input(": "))
     except ValueError:
         print("\nDebes introducir 1 o 2\n")
-        diferencia_conjuntos(conjunto_a,conjunto_b)
+        diferencia_conjuntos(conjunto_a, conjunto_b)
     else:
         if operacion == 1:
             print("\nLa diferencia de A - B es {}\n".format(conjunto_a.difference(conjunto_b)))
@@ -47,11 +48,12 @@ def diferencia_conjuntos(conjunto_a,conjunto_b):
             print("\nLa diferencia de B - A es {}\n".format(conjunto_b.difference(conjunto_a)))
         else:
             print("No reconozco esa operacion. Inttenta de nuevo")
-            diferencia_conjuntos(conjunto_a,conjunto_b)
+            diferencia_conjuntos(conjunto_a, conjunto_b)
 
-def diferencia_simetrica_conjuntos(conjunto_a,conjunto_b):
 
+def diferencia_simetrica_conjuntos(conjunto_a, conjunto_b):
     print("\nLa diferencia simetrica de A y B es {}\n".format(conjunto_a.symmetric_difference(conjunto_b)))
+
 
 def ver_instrucciones():
     print("Operaciones que puedes realizar:")
@@ -63,8 +65,8 @@ def ver_instrucciones():
     print("6 Insertar nuevos conjuntos")
     print("7 Salir")
 
-def calculadora_conjuntos(mensaje):
 
+def calculadora_conjuntos(mensaje):
     print(mensaje)
     print("Introduce los elementos de los conjunto separados por espacios")
     print("Ejemplo: 1 3 5 8 0 2")
@@ -81,13 +83,13 @@ def calculadora_conjuntos(mensaje):
             print("Introduce un número del 1 al 6")
         else:
             if operacion == 1:
-                union_conjuntos(conjunto_a,conjunto_b)
+                union_conjuntos(conjunto_a, conjunto_b)
             elif operacion == 2:
-                interseccion_conjuntos(conjunto_a,conjunto_b)
+                interseccion_conjuntos(conjunto_a, conjunto_b)
             elif operacion == 3:
-                diferencia_conjuntos(conjunto_a,conjunto_b)
+                diferencia_conjuntos(conjunto_a, conjunto_b)
             elif operacion == 4:
-                diferencia_simetrica_conjuntos(conjunto_a,conjunto_b)
+                diferencia_simetrica_conjuntos(conjunto_a, conjunto_b)
             elif operacion == 5:
                 ver_instrucciones()
             elif operacion == 6:
@@ -100,5 +102,3 @@ def calculadora_conjuntos(mensaje):
 
 
 calculadora_conjuntos(mensaje_inicio)
-
-
